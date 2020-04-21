@@ -1,0 +1,190 @@
+.bg{
+    background-image: url("https://www.bluefinllc.com/wp-content/uploads/2019/08/AdobeStock_120884346_sm-e1566503899644.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#homeheader{
+    text-align: center;
+}
+
+#homepara {
+    text-align: center;
+}
+
+body {
+     background-color: rgba(211, 214, 214, 0.486);
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  #title_page {
+    float: left;
+    font-size: 30px;
+  }
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: rgba(189, 196, 202, 0.719);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .visuals {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid black 1px;
+    padding: 2px;
+
+  }
+
+  .vis_par {
+    font-size: 35px;
+    line-height: 200%;
+
+  }
+
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    color: rgba(25, 159, 221, 0.829);
+    
+
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin: auto;
+  }
+
+  .compare {
+      max-width: 100%;
+      height:auto;
+      margin: auto;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+  }
+
+  #ctitle{
+      text-align: center;
+  }
+
+
+  div.transbox {
+    margin-top: 200px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+  }
+  
+  div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  tr:nth-child(even){
+    background-color: #f2f2f2;
+
+    }
+
+
+.dataframe {
+    border-radius: 20px;
+    position: absolute;
+    border-collapse: collapse;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 600px;
+    padding: 2px;
+    border-spacing: 20px;
+    margin-top: 50px;
+    margin-left: 400px;
+    margin-right: auto;
+
+}
+
+  th {
+    background-color: rgba(123, 106, 209, 0.603);
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    color: white;
+    height: 50px;
+    position: sticky;
+    padding: 15px;
+    text-align: center;
+    top: 0;
+  }
+
+  td {
+    padding: 15px;
+    text-align: center;
+  }

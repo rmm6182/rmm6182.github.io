@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City Weather</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <a id="title_page" href="home.html">Latitude</a>
+    <a href="comparisons.html">Comparisons</a>
+    <a href="data.html">Data</a>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Plots
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+        <a href="max_temp.html">Max Temperature</a>
+        <a href="humidity.html">Humidity</a>
+        <a href="cloudiness.html">Cloudiness</a>
+        <a href="wind_speed.html">Wind Speed</a>
+  </div>
+  </div> 
+</div>
+
+<h1>Humidity Visual</h1>
+
+<hr>
+
+<img class=visuals src="visualizations/lat_humid.png" alt="Humidity">
+
+  <p class = vis_par> This visualization shows the comparison of Latitude to Humidity. Latitude is on the X-axis (bottom axis). 
+    Humidity, which is in a percentile, is on the Y-axis (left axis). There is an interesting relationship between Latitude and Humidity.
+      There is a very even disbursement of high humidty across both Northern and Southern Hemispheres. 
+  </p>
+
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City Weather</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <a id="title_page" href="home.html">Latitude</a>
+    <a href="comparisons.html">Comparisons</a>
+    <a href="data.html">Data</a>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Plots
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+        <a href="max_temp.html">Max Temperature</a>
+        <a href="humidity.html">Humidity</a>
+        <a href="cloudiness.html">Cloudiness</a>
+        <a href="wind_speed.html">Wind Speed</a>
+  </div>
+  </div> 
+</div>
+
+
+<h1>Visual Comparisons</h1>
+
+<hr>
+
+<h2 id = "ctitle">This is a comparison side by side between the four different graphs. If you wish to know more, please click on the graph!</h2>
+
+<div class="row">
+    <div class="column">
+        <h2>Latitude vs. Max Temperature</h2>
+        <a href="max_temp.html">
+        <img title ="Max Temp" class ="compare" src="visualizations/max_temp.png" alt="Max Temp">
+        </a>
+    </div>
+    <div class="column">
+        <h2>Latitude vs. Humidity</h2>
+        <a href="humidity.html">
+        <img title= "Humidity" class= "compare" src="visualizations/lat_humid.png" alt="Humidity">
+        </a>
+    </div>
+    <div class="column">
+        <h2>Latitude vs. Cloudiness</h2>
+        <a href="cloudiness.html">
+        <img title= "Cloudiness" class="compare" src="visualizations/lat_cloud.png" alt="Cloudiness">
+        </a>
+    </div>
+      <div class="column">
+        <h2>Latitude vs. Wind Speed</h2>
+        <a href="wind_speed.html">
+        <img title= "Wind Speed" class="compare" src="visualizations/lat_wnd_spd.png" alt="Wind">
+        </a>    
+    </div>
+</div>
+
+
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+    </script>
+
+</body>
+</html>
