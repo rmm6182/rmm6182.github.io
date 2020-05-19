@@ -10,8 +10,14 @@ var margin = {top: 10, right: 30, bottom: 30, left: 60},
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")")
 
-//Read the data
-d3.csv("data.csv", function(data) {
+//Read the data 
+d3.csv("data.csv").then(function(data) {
+  // load data
+  data.forEach(function(d) {
+    d.age = +d.age;
+    d.smokes = +d.smokes;
+//    console.log(d);
+  });
 
   // Add X axis
   var x = d3.scaleLinear()
@@ -25,7 +31,7 @@ d3.csv("data.csv", function(data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 500])
+    .domain([8, 30])
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
@@ -42,7 +48,7 @@ d3.csv("data.csv", function(data) {
       .style("fill", "#69b3a2")
 
   // new X axis
-  x.domain([0, 400])
+  x.domain([30, 48])
   svg.select(".myXaxis")
     .transition()
     .duration(2000)
@@ -76,7 +82,7 @@ d3.csv("data.csv", function(data) {
 
   var mousemove = function(d) {
     tooltip
-      .html("The exact value of<br>the Ground Living area is: " + d.age)
+      .html("The age of Smoking is: " + d.age)
       .style("left", (d3.mouse(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -105,3 +111,4 @@ d3.csv("data.csv", function(data) {
     .on("mouseleave", mouseleave )
 
 })
+
