@@ -44,7 +44,7 @@ d3.csv("data.csv").then(function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.age); } )
       .attr("cy", function (d) { return y(d.smokes); } )
-      .attr("r", 1.5)
+      .attr("r", 5)
       .style("fill", "#69b3a2")
 
   // new X axis
@@ -52,7 +52,7 @@ d3.csv("data.csv").then(function(data) {
   svg.select(".myXaxis")
     .transition()
     .duration(2000)
-    .attr("opacity", "1")
+    .attr("opacity", "1", "transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
   svg.selectAll("circle")
@@ -61,7 +61,9 @@ d3.csv("data.csv").then(function(data) {
     .duration(2000)
     .attr("cx", function (d) { return x(d.age); } )
     .attr("cy", function (d) { return y(d.smokes); } )
-    var tooltip = d3.select("#my_dataviz")
+    
+  
+  var tooltip = d3.select("#my_dataviz")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -72,9 +74,7 @@ d3.csv("data.csv").then(function(data) {
     .style("padding", "10px")
 
 
-
   // A function that change this tooltip when the user hover a point.
-  // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
   var mouseover = function(d) {
     tooltip
       .style("opacity", 1)
@@ -83,7 +83,7 @@ d3.csv("data.csv").then(function(data) {
   var mousemove = function(d) {
     tooltip
       .html("The age of Smoking is: " + d.age)
-      .style("left", (d3.mouse(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("left", (d3.mouse(this)[0]+90) + "px") 
       .style("top", (d3.mouse(this)[1]) + "px")
   }
 
@@ -98,6 +98,11 @@ d3.csv("data.csv").then(function(data) {
   // Add dots
   svg.append('g')
     .selectAll("dot")
+    .data(data.filter(function(d,i){return i<50})) 
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.age); } )
+      .attr("cy", function (d) { return y(d.smokes); } )
     .enter()
     .append("circle")
       .attr("cx", function (d) { return x(d.age); } )
