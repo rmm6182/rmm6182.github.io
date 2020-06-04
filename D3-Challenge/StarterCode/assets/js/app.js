@@ -190,6 +190,24 @@ function updateToolTip(chosenXAxis,chosenYAxis) {
     .attr("r", 20)
     .attr("fill", "blue")
     .attr("opacity", ".5");
+  
+//create labels for dots with state abbr
+  var circleLabels = chartGroup.selectAll(null).data(censusData).enter().append("text");
+
+  circleLabels
+    .attr("x", function(d) {
+      return xLinearScale(d.chosenXAxis);
+    })
+    .attr("y", function(d) {
+      return yLinearScale(d.chosenYAxis);
+    })
+    .text(function(d) {
+      return d.abbr;
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "10px")
+    .attr("text-anchor", "middle")
+    .attr("fill", "white");
 
   // Create group for  x-axis labels
   var labelsGroupX = chartGroup.append("g")
